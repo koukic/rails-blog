@@ -15,6 +15,7 @@ COPY --from=node /opt/yarn-v1.19.1 /opt/yarn
 RUN ln -s /usr/local/bin/node /usr/local/bin/nodejs
 RUN ln -s /usr/local/lib/node_modules/npm/bin/npm-cli.js /usr/local/bin/npm
 RUN ln -s /opt/yarn/bin/yarn /usr/local/bin/yarn
+RUN yarn install
 # bundle install
 RUN gem install bundler --version 1.17.3 && \
     bundle install --jobs 4
@@ -23,4 +24,5 @@ RUN apk --update --no-cache add shadow sudo busybox-suid execline tzdata mariadb
 RUN cp /usr/share/zoneinfo/Asia/Tokyo /etc/localtime
 EXPOSE 80
 COPY . /rails
+RUN rake tmp:create
 CMD exec bundle exec puma -p 80 -e "$RAILS_ENV" -C config/puma.rb
