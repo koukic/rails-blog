@@ -15,12 +15,15 @@ services:
       DATABASE_URL: mysql2://root:koukic@mysql:3306/sample_app_development
       RAILS_ENV: development
       NODE_ENV: development
+      MYSQL_ROOT_PASSWORD: koukic
     command: "bundle exec puma -C config/puma.rb"
   mysql:
     image: mysql:5.7
     volumes:
-      - .:/rails
-      - mysql:/var/run/mysqld
+      # - .:/rails
+      # - mysql:/var/run/mysqld
+      - "./Dockerfiles/mysql/docker-entrypoint-initdb.d:/docker-entrypoint-initdb.d"
+      - "./Dockerfiles/mysql/conf.d:/etc/mysql/conf.d"
     ports:
       - 3306:3306
     command: mysqld --character-set-server=utf8mb4 --collation-server=utf8mb4_unicode_ci --innodb-file-format=Barracuda --innodb-file-format-max=Barracuda --innodb-large-prefix=on
