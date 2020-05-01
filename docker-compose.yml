@@ -18,7 +18,7 @@ services:
       MYSQL_ROOT_PASSWORD: koukic
     command: "bundle exec puma -C config/puma.rb"
   mysql:
-    image: mysql:5.7
+    image: mysql:5.5.54
     volumes:
       # - .:/rails
       # - mysql:/var/run/mysqld
