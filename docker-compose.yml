@@ -21,7 +21,7 @@ services:
     build:
       context: ./Dockerfiles/mysql
       dockerfile: Dockerfile
-    image: mysql:5.7
+    # image: mysql:5.7
     volumes:
       # - .:/rails
       # - mysql:/var/run/mysqld
