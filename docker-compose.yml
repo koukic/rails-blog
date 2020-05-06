@@ -24,7 +24,7 @@ services:
     # image: mysql:5.7
     volumes:
       # - .:/rails
-      # - mysql:/var/run/mysqld
+      - mysql:/var/run/mysqld
       - "./Dockerfiles/mysql/docker-entrypoint-initdb.d:/docker-entrypoint-initdb.d"
       - "./Dockerfiles/mysql/conf.d:/etc/mysql/conf.d"
     ports:
