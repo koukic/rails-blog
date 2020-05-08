@@ -11,4 +11,7 @@ $ cd directoryname
 $ docker-compose build
 $ docker-compose run --rm app bin/yarn install
 $ docker-compose run --rm app rake tmp:create
+
+change git remote url
+$ git remote set-url origin https://github.com/koukic/~
 ```
