@@ -6,7 +6,8 @@ rails development environment by docker
 
 ```
 $ git clone git@github.com:koukic/docker-rails
-$ cd docker-rails
+Please change the directory name
+$ cd directoryname
 $ docker-compose build
 $ docker-compose run --rm app bin/yarn install
 $ docker-compose run --rm app rake tmp:create
