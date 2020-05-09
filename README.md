@@ -10,6 +10,8 @@ Please change the directory name
 $ cd directoryname
 $ docker-compose build
 $ docker-compose run --rm app bin/yarn install
+if you need
+$ docker-compose run --rm app yarn install --check-files
 $ docker-compose run --rm app rake tmp:create
 
 change git remote url
