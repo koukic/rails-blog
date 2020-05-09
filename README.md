@@ -25,3 +25,9 @@ docker rmi　imageid
 としてbuildをする
 その後他のコンテナが起動していないことを
 docker psで確認する
+
+# mysqlの接続
+```
+$ docker-compose exec mysql bash
+$ mysql --password=koukic sample_app_development
+```
