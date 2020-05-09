@@ -15,3 +15,4 @@ $ docker-compose run --rm app rake tmp:create
 change git remote url
 $ git remote set-url origin https://github.com/koukic/~
 ```
+databaseはbuildの時に生成されます
