@@ -23,6 +23,8 @@ databaseはbuildの時に生成されます
 ```
 docker-compose rm
 docker rmi　imageid
+if you need
+docker volume rm ~
 ```
 としてbuildをする
 その後他のコンテナが起動していないことを
