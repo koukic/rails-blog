@@ -16,3 +16,12 @@ change git remote url
 $ git remote set-url origin https://github.com/koukic/~
 ```
 databaseはbuildの時に生成されます
+
+ディレクトリー名を変更したい場合
+```
+docker-compose rm
+docker rmi　imageid
+```
+としてbuildをする
+その後他のコンテナが起動していないことを
+docker psで確認する
