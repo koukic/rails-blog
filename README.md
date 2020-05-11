@@ -26,6 +26,7 @@ docker rmi　imageid
 if you need
 docker volume rm ~
 ```
+ただし 二回目以降はrmi imageidとするのはimageidが同じものが二つあるので注意
 としてbuildをする
 その後他のコンテナが起動していないことを
 docker psで確認する
