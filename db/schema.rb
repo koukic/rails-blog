@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_07_29_135528) do
+ActiveRecord::Schema.define(version: 2020_07_31_080942) do
 
   create_table "authors", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -24,6 +24,16 @@ ActiveRecord::Schema.define(version: 2020_07_29_135528) do
     t.index ["reset_password_token"], name: "index_authors_on_reset_password_token", unique: true
   end
 
+  create_table "elements", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci", force: :cascade do |t|
+    t.string "element_type"
+    t.text "content"
+    t.bigint "post_id", null: false
+    t.integer "position"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["post_id"], name: "index_elements_on_post_id"
+  end
+
   create_table "posts", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci", force: :cascade do |t|
     t.string "title"
     t.text "description"
@@ -35,5 +45,6 @@ ActiveRecord::Schema.define(version: 2020_07_29_135528) do
     t.index ["author_id"], name: "index_posts_on_author_id"
   end
 
+  add_foreign_key "elements", "posts"
   add_foreign_key "posts", "authors"
 end
