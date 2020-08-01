@@ -1,6 +1,6 @@
 h4.d-flex.justify-content-between.mb-4
   | Posts
-  = link_to 'New Post', new_post_path, class: 'btn btn-primary'
+  = link_to 'New Post', new_post_path, class: 'btn btn-primary text-white'
 
 - @posts.each do |post|
   = link_to edit_post_path(post), class: 'text-decoration-none' do

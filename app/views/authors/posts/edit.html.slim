@@ -1,8 +1,17 @@
-= link_to 'Back', posts_path, class: 'btn btn-secondary mb-3'
 .row
   .col-md-3
+    = link_to 'Back', posts_path, class: 'btn btn-secondary mb-3 text-white'
     .card
       .card-body
         .card-title
           | Editing Post
           = render 'form', post: @post
+  .col-md-9
+    .mb-3
+      = form_with(model: [@post, @paragraph]) do |form|
+        = form.hidden_field :element_type, value: 'paragraph'
+        = form.submit 'paragraph', class: 'btn btn-primary'
+    - @post.elements.each do |element|
+      = form_with(model: [@post, element]) do |form|
+        = form.text_area :content
+        = form.submit "save", class: 'btn btn-primary'
