@@ -58,3 +58,4 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'html2slim'
 gem 'slim'
 gem 'slim-rails'
+gem 'pry-rails'

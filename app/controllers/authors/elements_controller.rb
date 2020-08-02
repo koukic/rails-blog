@@ -1,5 +1,6 @@
 module Authors
   class ElementsController < AuthorsController
+    before_action :set_post
     before_action :set_element, only: [:update, :destroy]
 
     # POST /elements
@@ -11,7 +12,8 @@ module Authors
       else
         notice = @element.errors.full_messages.join(".") << "."
       end
-      redirect_to edit_post_path(@post)
+      binding.pry
+      redirect_to edit_post_path(@post), notice: notice
     end
 
     # PATCH/PUT /elements/1

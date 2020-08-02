@@ -11,7 +11,17 @@
       = form_with(model: [@post, @paragraph]) do |form|
         = form.hidden_field :element_type, value: 'paragraph'
         = form.submit 'paragraph', class: 'btn btn-primary'
-    - @post.elements.each do |element|
-      = form_with(model: [@post, element]) do |form|
-        = form.text_area :content
-        = form.submit "save", class: 'btn btn-primary'
+    .card
+      .card-body.pt-5
+        - @post.elements.each do |element|
+          - if element.persisted?
+            .mb-3
+              .paragraph-content
+                = raw element.content
+              .paragraph-form.d-none
+                = form_with(model: [@post, element]) do |form|
+                  = form.hidden_field :element_type, value: 'paragraph'
+                  = form.rich_text_area :content
+                  = form.submit "保存する", class: 'btn btn-primary mt-3 mr-2'
+                  a.mt-3.cancel.btn.btn-secondary[href="#"]
+                    | キャンセル
