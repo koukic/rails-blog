@@ -8,20 +8,28 @@
           = render 'form', post: @post
   .col-md-9
     .mb-3
-      = form_with(model: [@post, @paragraph]) do |form|
+      = form_with(model: [@post, @element], html: { class: 'float-left mr-1'}) do |form|
         = form.hidden_field :element_type, value: 'paragraph'
-        = form.submit 'paragraph', class: 'btn btn-primary'
+        = form.submit 'paragraph', class: 'btn btn-dark'
+      = form_with(model: [@post, @element]) do |form|
+        = form.hidden_field :element_type, value: 'image'
+        = form.submit 'Image', class: 'btn btn-dark'
     .card
       .card-body.pt-5
         - @post.elements.each do |element|
           - if element.persisted?
-            .mb-3
-              .paragraph-content
-                = raw element.content
-              .paragraph-form.d-none
-                = form_with(model: [@post, element]) do |form|
-                  = form.hidden_field :element_type, value: 'paragraph'
-                  = form.rich_text_area :content
-                  = form.submit "保存する", class: 'btn btn-primary mt-3 mr-2'
-                  a.mt-3.cancel.btn.btn-secondary[href="#"]
-                    | キャンセル
+            - if element.paragraph?
+              .mb-3.p-3.paragraph
+                .paragraph-content
+                  - if element.content.present?
+                    = raw element.content
+                  - else
+                    | Click
+                .paragraph-form.d-none
+                  = form_with(model: [@post, element]) do |form|
+                    = form.hidden_field :element_type, value: 'paragraph'
+                    = form.rich_text_area :content
+                    = form.submit "保存する", class: 'btn btn-primary mt-3 mr-2'
+                    a.mt-3.cancel.btn.btn-secondary[href="#"]
+                      | キャンセル
+            - elsif element.image?

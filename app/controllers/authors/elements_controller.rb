@@ -12,7 +12,6 @@ module Authors
       else
         notice = @element.errors.full_messages.join(".") << "."
       end
-      binding.pry
       redirect_to edit_post_path(@post), notice: notice
     end
 
