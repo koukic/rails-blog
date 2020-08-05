@@ -14,5 +14,14 @@
   .form-group
     = form.label :description
     = form.text_area :description, class: 'form-control'
+
+  .form-group
+    = form.label :header_image
+    = form.file_field :header_image, class: 'form-control'
+    .mt-1
+      small
+        | current image:
+      - if post.header_image.present?
+        = image_tag(post.header_image, width: '100%')
   .actions
     = form.submit class: 'btn btn-primary btn-block'

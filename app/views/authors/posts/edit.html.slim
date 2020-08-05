@@ -27,9 +27,22 @@
                     | Click
                 .paragraph-form.d-none
                   = form_with(model: [@post, element]) do |form|
-                    = form.hidden_field :element_type, value: 'paragraph'
                     = form.rich_text_area :content
+                    .mt-3.d-flex.justify-content-between
+                      div
+                        = form.submit "保存する", class: 'btn btn-primary mr-2'
+                        a.cancel.btn.btn-secondary[href="#"]
+                          | キャンセル
+                      = link_to 'Delete', post_element_path(@post, element), method: :delete, class: 'btn btn-danger', data: { confirm: 'Are you sure?'}
+            - elsif element.image?
+              .image.mb-4.p-3
+                - if element.image.present?
+                  div
+                    = image_tag(element.image)
+                  = link_to 'Delete', post_element_path(@post, element), method: :delete, class: 'btn btn-danger mt-2 float-right', data: { confirm: 'Are you sure?'}
+                - else
+                  = form_with(model: [@post, element]) do |form|
+                    = form.file_field :image
                     = form.submit "保存する", class: 'btn btn-primary mt-3 mr-2'
                     a.mt-3.cancel.btn.btn-secondary[href="#"]
                       | キャンセル
-            - elsif element.image?
