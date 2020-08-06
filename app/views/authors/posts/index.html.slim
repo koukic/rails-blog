@@ -4,9 +4,16 @@ h4.d-flex.justify-content-between.mb-4
 
 - @posts.each do |post|
   = link_to edit_post_path(post), class: 'text-decoration-none' do
-    .card.mb-3
+    .card.mb-3.post-card
       .card-body
-        h5.card-title.mb-1.text-dark
-          = post.title
-        p.text-secondary.mb-0
-          = post.description
+        .row
+          .col-md-2
+            - if post.header_image.present?
+              / .header-img style="background-image: url(<%= post.header_image %>);"
+              = image_tag post.header_image, class: 'header-img'
+
+          .col-md-10
+            h5.card-title.mb-1.text-dark
+              = post.title
+            p.text-secondary.mb-0
+              = post.description

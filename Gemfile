@@ -59,3 +59,5 @@ gem 'html2slim'
 gem 'slim'
 gem 'slim-rails'
 gem 'pry-rails'
+
+gem "stimulus_reflex", "~> 3.2"

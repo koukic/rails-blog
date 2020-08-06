@@ -6,6 +6,13 @@
         .card-title
           | Editing Post
           = render 'form', post: @post
+      .card-footer
+        - if @post.published?
+          a.btn.btn-secondary.btn-block href="#" data-reflex='click->PublisherReflex#unpublish' data-post-id='#{ @post.id}'
+            | Unpublished
+        - else
+          a.btn.btn-dark.btn-block href="#" data-reflex='click->PublisherReflex#publish' data-post-id='#{@post.id}'
+            | published
   .col-md-9
     .mb-3
       = form_with(model: [@post, @element], html: { class: 'float-left mr-1'}) do |form|
