@@ -15,10 +15,14 @@ require("channels")
 //
 // const images = require.context('../images', true)
 // const imagePath = (name) => images(name, true)
-import '../stylesheets/application'
+
+
 
 require("trix")
 require("@rails/actiontext")
+
+import "../stylesheets/application";
+import Sortable from "sortablejs";
 
 
 document.addEventListener('turbolinks:load', () => {
@@ -40,8 +44,8 @@ document.addEventListener('turbolinks:load', () => {
     element.classList.add('d-none')
     element.previousElementSibling.classList.remove('d-none')
   })
+  let element = document.getElementById('elements')
+  Sortable.create(elements, { animation: 150})
 })
-
-// import "controllers"
 
 import "controllers"
