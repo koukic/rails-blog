@@ -1,3 +1,8 @@
+/ div[data-controller="hello"]
+/   input[data-target="hello.name" type="text"]
+/   button[data-action="click->hello#greet"]
+/     |  Greet 
+/   span[data-target="hello.output"]
 .row
   .col-md-3
     = link_to 'Back', posts_path, class: 'btn btn-dark mb-3 text-white'
@@ -34,10 +39,10 @@
           | Unpublished
 
       .card-body.pt-5 data-controller="elements"
-        ul id='elements' data-action="drop->elements#sort"
-          - @post.elements.each do |element|
+        ul id='elements' data-action="dargdrop->elements#drop"
+          - @post.elements.order(position: :asc).each do |element|
             - if element.persisted?
-              li.element-item data-id="#{element.id}"
+              li.element-item[data-id="#{element.id}"]
                 - if element.paragraph?
                   .mb-3.p-3.paragraph
                     .paragraph-content

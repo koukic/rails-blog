@@ -13,6 +13,12 @@ h4.d-flex.justify-content-between.mb-4
               = image_tag post.header_image, class: 'header-img'
 
           .col-md-10
+            - if post.published?
+              .span.badge.badge-primary
+                | Published
+            - else
+              span.badge.badge-secondary
+                | Unpublished
             h5.card-title.mb-1.text-dark
               = post.title
             p.text-secondary.mb-0
