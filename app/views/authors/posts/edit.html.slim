@@ -39,7 +39,7 @@
           | Unpublished
 
       .card-body.pt-5 data-controller="elements"
-        ul id='elements' data-action="dargdrop->elements#drop"
+        ul id='elements' daraggable='true' data-action="dragstart->elements#dragstart dragleave->elements#dragleave click->elements#click dragover->elements#dragover dragenter->elements#dragenter drop->elements#sort"
           - @post.elements.order(position: :asc).each do |element|
             - if element.persisted?
               li.element-item[data-id="#{element.id}"]

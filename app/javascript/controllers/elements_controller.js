@@ -19,7 +19,30 @@ import { Controller } from "stimulus";
 
 export default class extends Controller {
 
+  dragstart(event) {
+    console.log('hello');
+  }
+
+  dragover(event) {
+    console.log("hello");
+    event.preventDefault();
+    return true;
+  }
+
+  dragenter(event) {
+    console.log("hello");
+    event.preventDefault();
+  }
+
+  dragleave() {
+    console.log('hello');
+  }
+
   drop() {
     console.log("hello");
+  }
+
+  click() {
+    console.log('hello2');
   }
 }
