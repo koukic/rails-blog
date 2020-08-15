@@ -16,33 +16,19 @@
 // }
 
 import { Controller } from "stimulus";
+import Sortable from "sortablejs";
 
 export default class extends Controller {
 
-  dragstart(event) {
+  connect() {
     console.log('hello');
+    let sortable_elements = document.getElementById("elements");
+    Sortable.create(sortable_elements, {
+      onEnd: this.end.bind(this)
+    });
   }
 
-  dragover(event) {
-    console.log("hello");
-    event.preventDefault();
-    return true;
-  }
-
-  dragenter(event) {
-    console.log("hello");
-    event.preventDefault();
-  }
-
-  dragleave() {
-    console.log('hello');
-  }
-
-  drop() {
-    console.log("hello");
-  }
-
-  click() {
-    console.log('hello2');
+  end(event) {
+    console.log(event);
   }
 }
