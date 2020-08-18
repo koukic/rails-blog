@@ -36,3 +36,7 @@ docker psで確認する
 $ docker-compose exec mysql bash
 $ mysql --password=koukic sample_app_development
 ```
+
+# 移動
+[![Image from Gyazo](https://i.gyazo.com/44dcedcd905d31146ae59c988593f1eb.gif)](https://gyazo.com/44dcedcd905d31146ae59c988593f1eb)
+stimulusjs とsortablejsを使うことによってリロードするとこの位置になる
