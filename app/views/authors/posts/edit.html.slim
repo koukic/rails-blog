@@ -4,7 +4,7 @@
 /     |  Greet 
 /   span[data-target="hello.output"]
 .row
-  .col-md-3
+  .col-md-4
     = link_to 'Back', posts_path, class: 'btn btn-dark mb-3 text-white'
     .card
       .card-header
@@ -19,7 +19,7 @@
         - else
           a.btn.btn-dark.btn-block href="#" data-reflex='click->PublisherReflex#publish' data-post-id='#{@post.id}'
             | published
-  .col-md-9
+  .col-md-8
     .mb-3
       = form_with(model: [@post, @element], html: { class: 'float-left mr-1'}) do |form|
         = form.hidden_field :element_type, value: 'paragraph'
