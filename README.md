@@ -40,3 +40,7 @@ $ mysql --password=koukic sample_app_development
 # 移動
 [![Image from Gyazo](https://i.gyazo.com/8931721401290fc864287fd8c4066600.gif)](https://gyazo.com/8931721401290fc864287fd8c4066600)
 stimulusjs とsortablejsを使うことによってリロードするとこの位置になる
+
+# view
+[![Image from Gyazo](https://i.gyazo.com/b17b5a79e1d732d167639a51585f5810.png)](https://gyazo.com/b17b5a79e1d732d167639a51585f5810)
+
