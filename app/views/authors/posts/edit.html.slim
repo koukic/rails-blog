@@ -40,7 +40,7 @@
 
       .card-body.pt-5 data-controller="elements"
         - if @post.elements.none? {|element| element.persisted?}
-          .p-5.text-center
+          .p-4.text-center
             h2.text-secondary
               i.fas.fa-lightbulb
             p
@@ -57,7 +57,7 @@
                           = raw element.content
                         - else
                           | Click
-                      .paragraph-form.d-none
+                      .paragraph-form.d-none id='element-#{element.id}-form'
                         = form_with(model: [@post, element]) do |form|
                           = form.rich_text_area :content
                           .mt-3.d-flex.justify-content-between
