@@ -25,7 +25,6 @@ export default class extends Controller {
 
   connect() {
     StimulusReflex.register(this)
-    console.log('hello');
     let sortable_elements = document.getElementById("elements");
     Sortable.create(sortable_elements, {
       onEnd: this.end.bind(this)
@@ -33,17 +32,13 @@ export default class extends Controller {
   }
 
   end(event) {
-    console.log(event.item);
     let element = document.getElementById("elements");
-    console.log(element);
     let element_items = Array.from(
       document.getElementsByClassName("element-item")
     );
-    console.log(element_items);
     let elements = element_items.map((element, index) => {
       return { id: element.dataset.id, position: index + 1 };
     });
-    console.log(elements);
     element.dataset.elements = JSON.stringify(elements);
     this.stimulate("ElementsReflex#sort", element);
   }
