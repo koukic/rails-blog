@@ -61,3 +61,5 @@ gem 'slim-rails'
 gem 'pry-rails'
 
 gem "stimulus_reflex", "~> 3.2"
+
+gem "optimism", "~> 0.3.5"
