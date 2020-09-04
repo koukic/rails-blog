@@ -9,7 +9,6 @@ h4.d-flex.justify-content-between.mb-4
         .row
           .col-md-2
             - if post.header_image.present?
-              / .header-img style="background-image: url(<%= post.header_image %>);"
               = image_tag post.header_image, class: 'header-img'
 
           .col-md-10

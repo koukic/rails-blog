@@ -1,4 +1,11 @@
-h1
-  | Home#index
-p
-  | Find me in app/views/home/index.html.erb
+.row
+  - @posts.each do |post|
+    .col-md-6.col-lg-4
+      .card.post-card
+        = image_tag post.header_image, class: 'header-image'
+        .card-body.d-flex.flex-column
+          h5.card-title
+            = post.title
+          p.card-text
+            = truncate(post.description, length: 250)
+          a.btn.btn-primary.mt-auto href="#"  Read post
