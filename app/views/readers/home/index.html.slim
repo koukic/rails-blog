@@ -8,4 +8,4 @@
             = post.title
           p.card-text
             = truncate(post.description, length: 250)
-          a.btn.btn-primary.mt-auto href="#"  Read post
+          = link_to 'Read Post', blog_post_path(post), class: 'btn btn-primary mt-auto'

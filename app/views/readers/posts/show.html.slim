@@ -1,0 +1,10 @@
+.card.post-card
+  = image_tag @post.header_image, class: 'header-image'
+  .card-body.d-flex.flex-column
+    h1.card-title
+      = @post.title
+    - @post.elements.each do |element|
+      - if element.image?
+        = image_tag(element&.image)
+      - else
+        = raw  element.content
