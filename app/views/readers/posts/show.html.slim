@@ -1,10 +1,15 @@
-.card.post-card
-  = image_tag @post.header_image, class: 'header-image'
-  .card-body.d-flex.flex-column
-    h1.card-title
-      = @post.title
-    - @post.elements.each do |element|
-      - if element.image?
-        = image_tag(element&.image)
-      - else
-        = raw  element.content
+.row
+  .col-lg-10.offset-lg-1
+    .card.post-card.mb-5
+      = image_tag @post.header_image, class: 'header-image'
+      .card-body
+        .pl-5.pr-5.pt-4.pb-4
+          h1.card-title.mb-5
+            = @post.title
+          - @post.elements.each do |element|
+            - if element.image?
+              .image-element.mb-4
+                = image_tag(element&.image)
+            - else
+              .content-element.mb-4
+                = raw  element.content

@@ -1,9 +1,23 @@
-.readers {
+.readers.home.index {
   .post-card {
     height: 550px;
     .header-image {
       height: 230px;
       object-fit: cover;
+    }
+  }
+}
+.readers.posts.show {
+  .post-card {
+    .header-image {
+      height: 350px;
+      object-fit: cover;
+    }
+    .image-element {
+      text-align: center;
+      img {
+        max-width: 80%;
+      }
     }
   }
 }
