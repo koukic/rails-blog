@@ -95,6 +95,8 @@ GEM
       hpricot
     i18n (1.8.2)
       concurrent-ruby (~> 1.0)
+    impressionist (2.0.0)
+      nokogiri (~> 1)
     listen (3.1.5)
       rb-fsevent (~> 0.9, >= 0.9.4)
       rb-inotify (~> 0.9, >= 0.9.7)
@@ -114,7 +116,7 @@ GEM
     msgpack (1.3.1)
     mysql2 (0.5.3)
     nio4r (2.5.2)
-    nokogiri (1.10.7)
+    nokogiri (1.10.10)
       mini_portile2 (~> 2.4.0)
     optimism (0.3.5)
       cable_ready (>= 4)
@@ -248,6 +250,7 @@ DEPENDENCIES
   devise
   friendly_id (~> 5.4.0)
   html2slim
+  impressionist
   listen (>= 3.0.5, < 3.2)
   mysql2 (>= 0.4.4)
   optimism (~> 0.3.5)
