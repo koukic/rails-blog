@@ -28,8 +28,20 @@ import "../stylesheets/application";
 import "controllers"
 
 document.addEventListener('turbolinks:load', () => {
-  console.log('Chart: ', Chart);
-  
+  var ctx = document.getElementById("myChart");
+  var myChart = new Chart(ctx, {
+    type: "line",
+    data: {
+      labels: ["Red", "Blue", "Yellow", "Green", "Purple", "Orange"],
+      datasets:
+        [{
+          label: "# of Votes",
+          data: [12, 19, 3, 5, 2, 3],
+          borderWidth: 1,
+        }],
+    },
+  });
+
   document.addEventListener('click', () => {
     let element = event.target.closest('.paragraph-content')
     if (!element) return;
