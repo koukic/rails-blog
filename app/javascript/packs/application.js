@@ -28,17 +28,31 @@ import "../stylesheets/application";
 import "controllers"
 
 document.addEventListener('turbolinks:load', () => {
-  var ctx = document.getElementById("myChart");
+  var ctx = document.getElementById("page-views");
   var myChart = new Chart(ctx, {
     type: "line",
     data: {
-      labels: ["Red", "Blue", "Yellow", "Green", "Purple", "Orange"],
-      datasets:
-        [{
-          label: "# of Votes",
-          data: [12, 19, 3, 5, 2, 3],
+      labels: Object.keys(JSON.parse(ctx.dataset.labels)),
+      datasets: [
+        {
+          data: Object.values(JSON.parse(ctx.dataset.labels)),
           borderWidth: 1,
-        }],
+        },
+      ],
+    },
+  });
+
+  var ctx = document.getElementById("unique-page-views");
+  var myChart = new Chart(ctx, {
+    type: "line",
+    data: {
+      labels: Object.keys(JSON.parse(ctx.dataset.labels)),
+      datasets: [
+        {
+          data: Object.values(JSON.parse(ctx.dataset.labels)),
+          borderWidth: 1,
+        },
+      ],
     },
   });
 
