@@ -42,5 +42,8 @@ $ mysql --password=koukic sample_app_development
 stimulusjs とsortablejsを使うことによってリロードするとこの位置になる
 
 # view
-[![Image from Gyazo](https://i.gyazo.com/b17b5a79e1d732d167639a51585f5810.png)](https://gyazo.com/b17b5a79e1d732d167639a51585f5810)
+[![Image from Gyazo](https://i.gyazo.com/cb31b97ac5ca68599aced7727a221dd2.png)](https://gyazo.com/cb31b97ac5ca68599aced7727a221dd2)
+[![Image from Gyazo](https://i.gyazo.com/ebc9afaded67812bc9d40853c4cb7b36.png)](https://gyazo.com/ebc9afaded67812bc9d40853c4cb7b36)
 
+# PageViewの計測
+[![Image from Gyazo](https://i.gyazo.com/28910dc1c0e3323125c33a7328dd0034.png)](https://gyazo.com/28910dc1c0e3323125c33a7328dd0034)
