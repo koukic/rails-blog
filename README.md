@@ -46,4 +46,5 @@ stimulusjs とsortablejsを使うことによってリロードするとこの�
 [![Image from Gyazo](https://i.gyazo.com/ebc9afaded67812bc9d40853c4cb7b36.png)](https://gyazo.com/ebc9afaded67812bc9d40853c4cb7b36)
 
 # PageViewの計測
+chart.jsによって図を表示
 [![Image from Gyazo](https://i.gyazo.com/28910dc1c0e3323125c33a7328dd0034.png)](https://gyazo.com/28910dc1c0e3323125c33a7328dd0034)
